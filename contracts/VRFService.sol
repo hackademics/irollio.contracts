@@ -7,16 +7,6 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/math/SafeMath.sol";
 import "@openzeppelin/contracts/utils/Address.sol";
 
-/** @dev VRFService Contract Description
-    @dev Wraps the VRF service to handle to request and response of random number requests
-    @dev Returns the Request Id and Random Number generated to calling contract
- */
- /** @dev TODO
-     @dev * Harden security and callbacks (addresses)
-     @dev * Intializable and Reentracy Guard inategration
-     @dev * Put payment on the Pot entry fee
-     @dev * Pass Link VRF params in constructor
-  */
 contract VRFService is Ownable, VRFConsumerBase
 {
     using SafeMath for *;

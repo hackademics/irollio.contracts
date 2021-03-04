@@ -7,23 +7,6 @@ import "@openzeppelin/contracts/math/SafeMath.sol";
 import "@openzeppelin/contracts/utils/Address.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 
-/** IRoll Contract Description
-    Admin interface to offchain services to manage Pots
- 
-    POT PAYOUT ARRAY
-    ** 0  : 66666 : JACKPOT
-    ** 1  : 11111 : FIVE OF A KIND
-    ** 2  : x1111 : FOUR OF A KIND
-    ** 3  : 11122 : FULL HOUSE
-    ** 4  : 12345 : LARGE STRAIGHT
-    ** 5  : 23456 : LARGE STRAIGHT
-    ** 6  : x1234 : SMALL STRAIGHT
-    ** 7  : x2345 : SMALL STRAIGHT
-    ** 8  : x3456 : SMALL STRAIGHT
-    ** 9  : xx111 : THREE OF A KIND
-    ** 10 : x1122 : TWO PAIR
-*/
-
 contract IRoll is Ownable {
     
     using SafeMath for *;

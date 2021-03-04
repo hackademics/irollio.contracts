@@ -7,30 +7,6 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/math/SafeMath.sol";
 import "@openzeppelin/contracts/utils/Address.sol";
 
-/** @dev Pot Contract Description
-    @dev Holds the balance of ether that players are trying to win (pot)
-    @dev Pot Owner is address responsible for Seeding and Opening the contract (benefactor)
-    @dev buy() is the payable call that accepts player entry fee and adds to balance (entry)
-    @dev Request for a random uint256 number is made to LINK Verified Random Function (VRFService.sol wrapper) (shake)
-    @dev Upon response of VRF number creation, number is converted to represent randomness as five six sided dice (roll)
-    @dev Dice representation result is inspected for Jack Pot or other winning combos (score) 
-    @dev Winning Combos cascade JACKPOT, FIVE OF A KIND, FOUR OF A KIND, FULL HOUSE, LARGE STRAIGHT(2), SMALL STRAIGHT(3), THREE OF A KIND, TWO PAIR
-    @dev Player winnings are a percentage of the contract balance and Jack Pot payouts should always leave ten percent (win)
-    @dev Pot Owners can set a custom payout at creation but these cannont be changed once Pot is opened.
-    @dev Inspired by the tavern Shake A Day dice game, Pots can be created with an interval set between shakes(once per day, or tender shift)(DOS)
- */
- /** @dev TODOS
-     @dev * Implement dynamic interval time between rolls
-     @dev * Harden balance deposit, withdraw, tranfer
-     @dev * Initializable and Reentrance guard
-     @dev * Library for Scoring methods
-     @dev * ECR20 Token deposit/swap
-     @dev * Compound or AAVE integration for pot balance interest
-     @dev * Allow Pot Owner to recover seed payment when applicable
-     @dev * Pot Owner receives percent of fees, winnings, interest
-     @dev * White listing of address for entry 
-     @dev * bit shifting to compact stored data
-  */
 contract Pot is Ownable, PullPayment {    
     using SafeMath for *;
 	using Address  for address;
