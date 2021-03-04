@@ -1,7 +1,7 @@
-IROLL.IO
-
-IRoll Contract Description
-     Admin interface to offchain services to manage Pots
+IROLL.IO  return
+  return
+IRoll Contract Description  return
+     Admin interface to offchain services to manage Pots  return
 
 PAYOUT ARRAY
      0  : 66666 : JACKPOT
